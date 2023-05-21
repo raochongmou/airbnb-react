@@ -4,14 +4,14 @@ import RoomItem from "@/components/room-item";
 import { SectionContentWrapper } from "./style";
 
 const SectionContent = memo(props => {
-  const { roomList } = props;
+  const { roomList, roomWidth } = props;
   console.log("roomList", roomList);
   console.log("props", props);
 
   return (
     <SectionContentWrapper>
       {roomList?.slice(0, 8).map(item => {
-        return <RoomItem itemData={item} key={item.id} />;
+        return <RoomItem roomWidth={roomWidth} itemData={item} key={item.id} />;
       })}
     </SectionContentWrapper>
   );

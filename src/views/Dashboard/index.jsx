@@ -2,26 +2,30 @@ import React, { memo, useEffect } from "react";
 import { DashboardWrapper } from "./style";
 import DashboardBanner from "./c-cpns/dashboard-banner";
 
-import {
-  fetchDashBoardDataAction,
-  fetchDashBoardDataListAction
-} from "@/store/modules/dashboard";
+import { fetchDashBoardDataAction } from "@/store/modules/dashboard";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import SectionHeader from "@/components/section-header";
-import SectionContent from "@/components/section-content";
+import DashboardSction from "./c-cpns/dashboard-section";
+import DashboardTabs from "./c-cpns/dashboard-tabs";
 
 const Dashboard = memo(() => {
   const dispatch = useDispatch();
-  const { goodPriceInfo } = useSelector(
+  const { 
+    goodPriceInfo, 
+    highScoreInfo, 
+    discountInfo, 
+    recommendInfo 
+  } = useSelector(
     state => ({
-      goodPriceInfo: state.dashboard.goodPriceInfo
+      goodPriceInfo: state.dashboard.goodPriceInfo,
+      highScoreInfo: state.dashboard.highScoreInfo,
+      discountInfo: state.dashboard.discountInfo,
+      recommendInfo: state.dashboard.recommendInfo,
     }),
     shallowEqual
   );
   useEffect(
     () => {
       dispatch(fetchDashBoardDataAction("xxxx"));
-      dispatch(fetchDashBoardDataListAction("yyyy"));
     },
     [dispatch]
   );
@@ -29,10 +33,12 @@ const Dashboard = memo(() => {
     <DashboardWrapper>
       <DashboardBanner />
       <div className="content">
-        <div className="section-title">
-          <SectionHeader title={goodPriceInfo?.title} subTitle={goodPriceInfo?.sub_title}/>
-          <SectionContent roomList={goodPriceInfo?.list} />
-        </div>
+        {discountInfo?.dest_address?.length &&
+          <DashboardTabs dataInfo={discountInfo} />}
+        {recommendInfo?.dest_address?.length &&
+          <DashboardTabs dataInfo={recommendInfo} />}
+        <DashboardSction dataInfo={goodPriceInfo} />
+        <DashboardSction dataInfo={highScoreInfo} />
       </div>
     </DashboardWrapper>
   );

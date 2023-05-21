@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const RoomItemWrapper = styled.div`
-  width: 25%;
+  width: ${props => props.roomwidth};
   padding: 8px;
   box-sizing: border-box;
   .inner {
@@ -23,7 +23,7 @@ export const RoomItemWrapper = styled.div`
   }
   .desc {
     margin: 10px 0;
-    color: ${props => props.verifyColor};
+    color: ${props => props.verifycolor};
     font-size: 14px;
   }
   .name {
