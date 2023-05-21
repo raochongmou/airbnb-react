@@ -7,6 +7,8 @@ import {
   fetchDashBoardDataListAction
 } from "@/store/modules/dashboard";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import SectionHeader from "@/components/section-header";
+import SectionContent from "@/components/section-content";
 
 const Dashboard = memo(() => {
   const dispatch = useDispatch();
@@ -27,16 +29,10 @@ const Dashboard = memo(() => {
     <DashboardWrapper>
       <DashboardBanner />
       <div className="content">
-        <h2>
-          标题：{goodPriceInfo?.title}
-        </h2>
-        {goodPriceInfo?.list?.map(item => {
-          return (
-            <li key={item.id}>
-              {item.name}
-            </li>
-          );
-        })}
+        <div className="section-title">
+          <SectionHeader title={goodPriceInfo?.title} subTitle={goodPriceInfo?.sub_title}/>
+          <SectionContent roomList={goodPriceInfo?.list} />
+        </div>
       </div>
     </DashboardWrapper>
   );
