@@ -6,5 +6,8 @@ export const HeaderLeftWrapper = styled.div`
   /* color: ${props => props.theme.color.secondColor}; */
   div {
     margin-left: 24px;
+    svg {
+      cursor: pointer;
+    }
   }
 `;
