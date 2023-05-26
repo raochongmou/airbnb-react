@@ -23,3 +23,15 @@ export function getHotRecommend() {
     url: "/home/hotrecommenddest"
   });
 }
+
+export function getLongfor() {
+  return RcmAxiosInstance.get({
+    url: "/home/longfor"
+  });
+}
+
+export function getPlus() {
+  return RcmAxiosInstance.get({
+    url: "/home/plus"
+  });
+}

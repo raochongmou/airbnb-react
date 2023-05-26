@@ -1,15 +1,14 @@
 import { styled } from "styled-components";
 
 export const TabsWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   margin: 20px 0;
   .item {
     flex-basis: 120px;
     box-sizing: border-box;
-    /* flex-shrink: 0; */
+    flex-shrink: 0;
     padding: 14px 16px;
     text-align: center;
-    margin-left: 16px;
     border-radius: 3px;
     font-size: 17px;
     border: 0.5px solid #d8d8d8;
@@ -20,5 +19,8 @@ export const TabsWrapper = styled.div`
       color: #fff;
       background-color: ${props => props.theme.color.secondColor};
     }
+  }
+  .item + .item {
+    margin-left: 16px;
   }
 `;
