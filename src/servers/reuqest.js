@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL, TIME_OUT } from "./config";
+import { BASE_URL, TIME_OUT } from "./api.config";
 
 export default new class {
   constructor(BASE_URL, TIME_OUT) {
