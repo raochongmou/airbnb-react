@@ -1,3 +1,4 @@
+import Demo from "@/views/Demo";
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 const Dashboard = lazy(() => import("@/views/Dashboard"));
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "/entire",
     element: <Entire />
+  },
+  {
+    path: "/demo",
+    element: <Demo />
   }
 ];
 

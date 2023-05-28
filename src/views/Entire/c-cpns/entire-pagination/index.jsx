@@ -13,6 +13,7 @@ const EntirePagination = memo(() => {
     }),
     shallowEqual
   );
+  console.log("currentPage", currentPage);
   const preCurrentPage = currentPage * 20 + 1;
   const beCurrentPage = (currentPage + 1) * 20;
   const totalPage = Math.ceil(total / 20);
@@ -23,7 +24,7 @@ const EntirePagination = memo(() => {
   };
   return (
     <EntirePaginationWrapper>
-      {!!roomList.length &&
+      {!!roomList?.length &&
         <div className="entire-pagination">
           <Pagination
             count={totalPage}

@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const ScrollWrapper = styled.div`
+  width: 100%;
   .scroll-wrapper-div {
-    width: 100%;
     position: relative;
     overflow: hidden;
   }

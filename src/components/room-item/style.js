@@ -7,6 +7,73 @@ export const RoomItemWrapper = styled.div`
   box-sizing: border-box;
   .inner {
     width: 100%;
+
+    .swipper {
+      background-color: blue;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+      &:hover {
+        .control {
+          display: flex;
+        }
+      }
+
+      .control {
+        display: none;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .05);
+
+        .btn {
+          width: 20%;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &.left {
+          }
+          &.right {
+          }
+        }
+      }
+      .indicator {
+        width: 30%;
+        position: absolute;
+        bottom: 10px;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        z-index: 99;
+        .doc {
+          display: flex;
+          align-items: center;
+          width: 20%;
+          .item {
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            &.active {
+              background-color: #409eff;
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+    }
   }
   .cover {
     position: relative;

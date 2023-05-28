@@ -1,4 +1,5 @@
 // 第三方包
+import "antd/dist/reset.css"; // or 'antd/dist/antd.less'
 import "normalize.css";
 
 import React from "react";

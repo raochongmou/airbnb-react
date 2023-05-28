@@ -18,7 +18,7 @@ const entireAction = {
     type: entireType.CANGELOADING,
     isLoading
   }),
-  fetchEntireList: currentPage => {
+  fetchEntireList: (currentPage = 0) => {
     return async (dispatch, getState) => {
       dispatch(entireAction.changeCurrentPageAction(currentPage));
       // const currentPage = getState().entire.currentPage;
