@@ -24,6 +24,8 @@ const RoomItem = memo(props => {
   }
   const swipperElement = (
     <div className="swipper">
+      {itemData ? (
+        <>
       <div className="control">
         <div className="btn left" onClick={() => handleBtnClick(false)}>
           <IconArrowLeft width="30" height="30" />
@@ -55,7 +57,7 @@ const RoomItem = memo(props => {
             )
           })
         }
-      </Carousel>
+      </Carousel></>) : (<h2>loading...</h2>)}
     </div>
   )
   const plainElement = (

@@ -9,7 +9,8 @@ export const RoomItemWrapper = styled.div`
     width: 100%;
 
     .swipper {
-      background-color: blue;
+      /* background-color: blue; */
+      background: url(${require("@/assets/img/loading.gif")}) center/cover;
       position: relative;
       top: 0;
       left: 0;
