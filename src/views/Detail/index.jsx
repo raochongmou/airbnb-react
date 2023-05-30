@@ -1,16 +1,17 @@
 import React, { memo, useEffect } from "react";
-import RcmAxiosInstance from "@/servers";
+import { DetailWrapper } from "./style";
+import { useSelector } from "react-redux";
+import DetailPicture from "./c-cpns/detail-picture";
 
-const Detail = memo(() => {
-  useEffect(() => {
-    RcmAxiosInstance.request({
-      url: "/home/highscore"
-    }).then(res => {
-      console.log("res", res);
-    });
-  }, []);
-
-  return <div>Detail</div>;
+const Detail = memo(props => {
+  const { detailInfo } = useSelector(state => ({
+    detailInfo: state.detail.detailInfo
+  }));
+  return (
+    <DetailWrapper>
+      <DetailPicture />
+    </DetailWrapper>
+  );
 });
 
 export default Detail;

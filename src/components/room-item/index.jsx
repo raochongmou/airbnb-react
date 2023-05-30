@@ -8,7 +8,7 @@ import IconMoreArrow from "@/assets/svg/icon-more-arrow";
 import Indicator from "@/base-ui/indicator";
 
 const RoomItem = memo(props => {
-  const { itemData, roomWidth } = props;
+  const { itemData, roomWidth, roomItemClick } = props;
   const carouselRef = useRef();
   const [selectIdx, setSelectIdx] = useState(0);
   const itemLength = itemData?.picture_urls?.length - 1;
@@ -18,6 +18,12 @@ const RoomItem = memo(props => {
     if(newIdx > itemLength) newIdx = 0;
     if(newIdx < 0) newIdx = itemLength;
     setSelectIdx(newIdx);
+  }
+  function handleClick(item) {
+    console.log("handleClick");
+    if(roomItemClick) {
+      roomItemClick(item);
+    }
   }
   function isActive(index) {
     return index === selectIdx ? 'active' : '';
@@ -52,7 +58,7 @@ const RoomItem = memo(props => {
           itemData?.picture_urls?.map(item => {
             return (
               <div className="cover" key={item}>
-                <img src={item}  />
+                <img src={item} />
               </div> 
             )
           })
@@ -67,6 +73,7 @@ const RoomItem = memo(props => {
   )
   return (
     <RoomItemWrapper 
+    onClick={() => handleClick(itemData)}
     roomwidth={roomWidth??"25%"}
     verifycolor={itemData.verify_info.text_color}>
       <div className="inner">
