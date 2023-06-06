@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import React, { memo, useState } from "react";
 import { DemoWrapper } from "./style";
 import Indicator from "@/base-ui/indicator";
@@ -38,6 +38,6 @@ const Demo = memo(props => {
   );
 });
 
-Demo.propTypes = {};
+// Demo.propTypes = {};
 
 export default Demo;

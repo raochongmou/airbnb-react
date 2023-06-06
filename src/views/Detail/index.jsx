@@ -1,12 +1,21 @@
 import React, { memo, useEffect } from "react";
 import { DetailWrapper } from "./style";
-import { useSelector } from "react-redux";
 import DetailPicture from "./c-cpns/detail-picture";
+import { useDispatch } from "react-redux";
+import {
+  // changeHeaderConfigAction,
+  changeIsFixedAction
+} from "@/store/modules/main";
 
-const Detail = memo(props => {
-  const { detailInfo } = useSelector(state => ({
-    detailInfo: state.detail.detailInfo
-  }));
+const Detail = memo(() => {
+  const dispatch = useDispatch();
+  useEffect(
+    () => {
+      // dispatch(changeHeaderConfigAction({ isFixed: false }));
+      dispatch(changeIsFixedAction(false));
+    },
+    [dispatch]
+  );
   return (
     <DetailWrapper>
       <DetailPicture />

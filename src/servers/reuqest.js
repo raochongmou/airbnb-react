@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL, TIME_OUT } from "./api.config";
 
-export default new class {
+const RcmAxios = new class {
   constructor(BASE_URL, TIME_OUT) {
     this.instance = axios.create({
       baseURL: BASE_URL,
@@ -29,3 +29,5 @@ export default new class {
     return this.request({ ...config, method: "post" });
   }
 }(BASE_URL, TIME_OUT);
+
+export default RcmAxios;

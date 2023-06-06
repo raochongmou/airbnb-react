@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const EntireContentWrapper = styled.div`
+  margin-top: 165px;
   padding: 15px;
   position: relative;
 

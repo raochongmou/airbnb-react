@@ -16,7 +16,7 @@ const EntireContent = memo(() => {
   const roomItemClick = useCallback((item) => {
     dispatch(changeDetailInfoAction(item));
     navigate("/detail");
-  })
+  }, [dispatch, navigate])
   return <EntireContentWrapper>
     <h2 className="entire-content-title">{total}处住所</h2>
     <div className="entire-content">

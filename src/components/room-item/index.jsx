@@ -45,8 +45,8 @@ const RoomItem = memo(props => {
           {
             itemData?.picture_urls?.map((item, index) => {
               return (
-                <div className="doc">
-                  <span key={item} className={`item ${isActive(index)}`}></span>
+                <div className="doc" key={item}>
+                  <span  className={`item ${isActive(index)}`}></span>
                 </div>
               )
             })
@@ -58,7 +58,7 @@ const RoomItem = memo(props => {
           itemData?.picture_urls?.map(item => {
             return (
               <div className="cover" key={item}>
-                <img src={item} />
+                <img src={item} alt=""/>
               </div> 
             )
           })
@@ -68,7 +68,7 @@ const RoomItem = memo(props => {
   )
   const plainElement = (
     <div className="cover">
-      <img src={itemData.picture_url}  />
+      <img src={itemData.picture_url} alt="" />
     </div>
   )
   return (

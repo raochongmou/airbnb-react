@@ -9,6 +9,10 @@ import DashboardTabs from "./c-cpns/dashboard-tabs";
 import DashboardExtra from "./c-cpns/dashboard-extra";
 import { isObject } from "@/utils";
 import DashboardPlus from "./c-cpns/dashboard-plus";
+import {
+  // changeHeaderConfigAction
+  changeIsFixedAction
+} from "@/store/modules/main";
 
 const Dashboard = memo(() => {
   const dispatch = useDispatch();
@@ -33,6 +37,8 @@ const Dashboard = memo(() => {
   useEffect(
     () => {
       dispatch(fetchDashBoardDataAction("xxxx"));
+      // dispatch(changeHeaderConfigAction({ isFixed: true }));
+      dispatch(changeIsFixedAction(true));
     },
     [dispatch]
   );

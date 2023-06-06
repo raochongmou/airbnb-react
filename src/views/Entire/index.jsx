@@ -5,12 +5,18 @@ import EntireFilter from "./c-cpns/entire-filter";
 import EntirePagination from "./c-cpns/entire-pagination";
 import { useDispatch } from "react-redux";
 import entireAction from "@/store/modules/entire/createAction";
+import {
+  // changeHeaderConfigAction,
+  changeIsFixedAction
+} from "@/store/modules/main";
 
 const Entire = memo(() => {
   const disPatch = useDispatch();
   useEffect(
     () => {
       disPatch(entireAction.fetchEntireList());
+      // disPatch(changeHeaderConfigAction({ isFixed: true }));
+      disPatch(changeIsFixedAction(true));
     },
     [disPatch]
   );

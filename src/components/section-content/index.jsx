@@ -5,8 +5,6 @@ import { SectionContentWrapper } from "./style";
 
 const SectionContent = memo(props => {
   const { roomList, roomWidth } = props;
-  console.log("roomList", roomList);
-  console.log("props", props);
 
   return (
     <SectionContentWrapper>

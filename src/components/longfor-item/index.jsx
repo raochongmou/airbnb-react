@@ -3,11 +3,11 @@ import React, { memo } from "react";
 import { LongforItemWrapper } from "./style";
 
 const LongforItem = memo(props => {
-  const { itemData, itemWidth } = props;
+  const { itemData } = props;
   return (
     <LongforItemWrapper>
       <div className="long-inner">
-        <img className="long-img" src={itemData.picture_url} />
+        <img className="long-img" src={itemData.picture_url} alt="" />
         <div className="long-bg" />
         <div className="long-city">
           {itemData.city}

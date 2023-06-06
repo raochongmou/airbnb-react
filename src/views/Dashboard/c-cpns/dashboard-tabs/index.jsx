@@ -15,7 +15,7 @@ const DashboardTabs = memo((props) => {
   const [name, setName] = useState(initialName);
   const handleItemClickInvoke = useCallback((index, item) => {
     setName(item)
-  }, [name]);
+  }, []);
   return (
     <DashboardTabsWrapper>
       <div className="tabs">

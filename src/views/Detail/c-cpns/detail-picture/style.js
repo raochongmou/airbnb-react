@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 
 export const DetailPictureWrapper = styled.div`
+  height: 600px;
+  position: relative;
+  width: 100%;
   margin-top: 20px;
   .cover {
     position: absolute;
@@ -14,19 +17,23 @@ export const DetailPictureWrapper = styled.div`
   }
   .picture {
     width: 100%;
+    height: 100%;
     display: flex;
     .left {
       border: 1px solid #eee;
       box-sizing: border-box;
       width: 50%;
+      height: 100%;
+      overflow: hidden;
       .item {
+        height: 100%;
         position: relative;
         width: 100%;
-        overflow: hidden;
         transition: tramsform 250ms ease;
         img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
         .cover {
         }
@@ -34,7 +41,6 @@ export const DetailPictureWrapper = styled.div`
       .item:hover {
         transform: scale(1.1);
         .cover {
-          overflow: hidden;
           background-color: rgba(0, 0, 0, 0);
         }
       }
@@ -45,23 +51,36 @@ export const DetailPictureWrapper = styled.div`
       flex-wrap: wrap;
       .item {
         position: relative;
-        overflow: hidden;
         border: 1px solid #eee;
         box-sizing: border-box;
-        transition: tramsform 250ms ease;
+        transition: all 250ms ease;
         width: 50%;
         height: 50%;
+        overflow: hidden;
         img {
           width: 100%;
           height: 100%;
         }
       }
       .item:hover {
-        transform: scale(1.1);
+        img {
+          transform: scale(1.1);
+        }
         .cover {
           background-color: rgba(0, 0, 0, 0);
         }
       }
     }
+  }
+  .show-picture {
+    position: absolute;
+    z-index: 99;
+    right: 15px;
+    bottom: 15px;
+    line-height: 22px;
+    padding: 6px 15px;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
   }
 `;
