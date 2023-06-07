@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL, TIME_OUT } from "./api.config";
+import { BASE_URL, TIME_OUT } from "./api.config.js";
 
 const RcmAxios = new class {
   constructor(BASE_URL, TIME_OUT) {
