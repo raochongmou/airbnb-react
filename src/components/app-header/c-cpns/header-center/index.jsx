@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 import { HeaderCenterWrapper } from "./style";
-import Search from "@/assets/svg/search";
+// import Search from "@/assets/svg/search";
 
 const HeaderCenter = memo(() => {
   const data = [

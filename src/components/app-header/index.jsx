@@ -6,7 +6,8 @@ import HeaderRight from "./c-cpns/header-right";
 import { shallowEqual, useSelector } from "react-redux";
 
 const AppHeader = memo(props => {
-  const [isSearch, setIsSearch] = useState(true);
+  const [isSearch] = useState(true);
+  // const [isSearch, setIsSearch] = useState(true);
   const { isFixed } = useSelector(
     state => ({
       isFixed: state.main.isFixed
