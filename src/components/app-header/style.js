@@ -31,4 +31,6 @@ export default styled.div`
   }
 `;
 
-export const SearchWrapper = styled.div`height: 100px;`;
+export const SearchWrapper = styled.div`
+  height: ${props => (props.issearch ? "0px" : "100px")};
+`;

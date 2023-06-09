@@ -6,8 +6,7 @@ import HeaderRight from "./c-cpns/header-right";
 import { shallowEqual, useSelector } from "react-redux";
 
 const AppHeader = memo(props => {
-  const [isSearch] = useState(true);
-  // const [isSearch, setIsSearch] = useState(true);
+  const [isSearch, setIsSearch] = useState(true);
   const { isFixed } = useSelector(
     state => ({
       isFixed: state.main.isFixed
@@ -19,12 +18,15 @@ const AppHeader = memo(props => {
       <div className="header-content">
         <div className="top">
           <HeaderLeft />
-          <HeaderCenter />
+          <HeaderCenter
+            isSearch={isSearch}
+            handleSearchcb={() => setIsSearch(false)}
+          />
           <HeaderRight />
         </div>
-        <SearchWrapper isSearch={isSearch} />
+        <SearchWrapper issearch={isSearch} />
       </div>
-      <div className="cover" />
+      <div className="cover" onClick={() => setIsSearch(true)} />
     </HeaderWrapper>
   );
 });
